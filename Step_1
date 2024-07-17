@@ -1,0 +1,106 @@
+# /home/tarotoyota/Step_1_class_func_py.py
+import Step_1_class_inst_py
+from master_class_saraba_func_py import apply_color_styles_saraba
+
+"""
+@dataclass
+class Step_1:
+    all_Step_1: ClassVar[List['Step_1']] = []
+    did:str
+    right:list
+    wrong:dict
+    def __post_init__(self):
+        Step_1.all_Step_1.append(self)
+"""
+
+def X_class_func(arg):
+    result_list=[]
+
+    return apply_color_styles_saraba('<br>'.join(map(str, result_list)))
+
+def Step_1_class_output(word_a):
+    arg = getattr(Step_1_class_inst_py, word_a, None)
+
+    if arg is None or not isinstance(arg, Step_1_class_inst_py.Step_1):
+        raise ValueError(f"{word_a}はStep_1_classクラスのインスタンスではありません。")
+
+    result = apply_color_styles_saraba(Step_1_class_func(arg))
+    return result
+
+
+"""
+def search_instances(target_word):
+    result_list = []
+    for instance in A_class.all_A_class:
+        # Convert dict_values to list for concatenation
+        all_values = [item for sublist in instance.d_dict.values() for item in sublist]
+        # Include dict keys in the search
+        all_keys = list(instance.d_dict.keys())
+        # Check for target_word in all attributes, including dict keys and values
+        if any(target_word in item for item in instance.inst_name + instance.c_list + all_values + all_keys):
+            result_list.append(
+                f"(inst_name: {instance.inst_name} c_list: {instance.c_list} d_dict: {instance.d_dict})"
+            )
+    return result_list
+
+
+search_result = search_instances("japan") # "thai" がヒットするはず
+print(search_result)
+
+"""
+
+# This file is /home/tarotoyota/Step_1_class_func_py.py
+from dataclasses import dataclass
+from typing import List, ClassVar
+
+@dataclass
+class Step_1:
+    all_Step_1: ClassVar[List['Step_1']] = []
+    did:str
+    right:list
+    wrong:dict
+    def __post_init__(self):
+        Step_1.all_Step_1.append(self)
+
+
+general_purpose_text_sauna=["I lectured the person in charge.", "I demanded a refund.","I gave it a low rating in an online review."]
+
+_complained_about_the_heat          =Step_1("complained about the heat"         ,["hotel"           ],{"sauna"          :[*general_purpose_text_sauna]})
+_complained_about_the_noise         =Step_1("complained about the noise"        ,["hotel"           ],{"rock concert"   :[*general_purpose_text_sauna,"I reported it to the police because it was noisy, but they didn't take action."]})
+_complained_about_the_ride          =Step_1("complained about the ride"         ,["taxi"            ],{"roller coaster" :[*general_purpose_text_sauna,"I called to complain, telling them to slow down and not accelerate so suddenly."]})
+_complained_about_the_average_age   =Step_1("complained about the average age"  ,["brothel"         ],{"nursing home"   :[*general_purpose_text_sauna,"I complained to them because they were all old hags."]})
+_complained_about_the_view          =Step_1("complained about the view"         ,["hotel"           ],{"subway"         :[*general_purpose_text_sauna,"I said the view was terrible and claustrophobic."]})
+_complained_about_the_distance      =Step_1("complained about the distance"     ,["airport"         ],{"marathon"       :[*general_purpose_text_sauna,"I complained that it was too far to walk.", "I called a taxi."]})
+_complained_about_the_service       =Step_1("complained about the service"      ,["restaurant"      ],{"haunted house"  :[*general_purpose_text_sauna,"I said the staff was too scary and unprofessional.", "I gave a lecture to the unfriendly staff."]})
+_complained_about_the_speed         =Step_1("complained about the speed"        ,["taxi"            ],{"race car"       :[*general_purpose_text_sauna,"I told the man in charge to slow down because it was dangerous."]
+                                                                                                     , "roller coaster" :[*general_purpose_text_sauna,"I told the man in charge to slow down because my wife was pregnant."]})
+_complained_about_the_cold          =Step_1("complained about the cold"         ,["hotel"           ],{"ski resort"     :[*general_purpose_text_sauna,"I complained that it was too cold and asked why they couldn't make it warmer."]})
+_complained_about_it_being_wet      =Step_1("complained about it being wet"     ,["hotel"           ],{"pool"           :[*general_purpose_text_sauna]})
+_complained_about_the_dryness       =Step_1("complained about the dryness"      ,["hotel"           ],{"desert"         :[*general_purpose_text_sauna,"I had the man in charge bring a humidifier."]})
+_complained_about_the_humidity      =Step_1("complained about the humidity"     ,["hotel"           ],{"rainforest"     :[*general_purpose_text_sauna,"I had the man in charge bring a dehumidifier."]})
+
+
+def search_Step_1_instances(target_word):
+    result_list = []
+    for instance in Step_1.all_Step_1:
+
+        all_values = [item for sublist in instance.wrong.values() for item in sublist]
+
+        all_keys = list(instance.wrong.keys())
+
+        if any(target_word in item for item in list(instance.did) + instance.right + all_values + all_keys):
+            result_list.append(
+                f"""(<table>
+                <tr><th>.did  </th> <td>{instance.did}  </td></tr>
+                <tr><th>.right</th> <td>{instance.right}</td></tr>
+                <tr><th>.wrong</th> <td>{instance.wrong}</td></tr>
+                </table>"""
+            )
+    return result_list
+
+result = search_Step_1_instances("taxi")
+print(result)
+
+
+
+
